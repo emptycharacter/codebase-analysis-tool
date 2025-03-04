@@ -1,0 +1,26 @@
+# Byte-compiled / cached files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+
+# Logs and dependencies
+*.log
+node_modules/
+dist/
+build/
+
+# Jupyter Notebook checkpoints (if using Jupyter)
+.ipynb_checkpoints/
+
+# MacOS system files
+.DS_Store
