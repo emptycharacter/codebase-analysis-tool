@@ -2,7 +2,7 @@ import os
 import ast
 
 def extract_docstrings(file_path):
-    """Extracts function names and docstrings from a Python file."""
+    """Extracts function and class docstrings from a Python file."""
     with open(file_path, "r", encoding="utf-8") as f:
         source_code = f.read()
     
@@ -13,7 +13,11 @@ def extract_docstrings(file_path):
         if isinstance(node, ast.FunctionDef):  # Find functions
             func_name = node.name
             docstring = ast.get_docstring(node) or "No docstring provided."
-            doc_data.append(f"### `{func_name}()`\n\n{docstring}\n")
+            doc_data.append(f"### Function: `{func_name}()`\n\n{docstring}\n")
+        elif isinstance(node, ast.ClassDef):  # Find classes
+            class_name = node.name
+            docstring = ast.get_docstring(node) or "No docstring provided."
+            doc_data.append(f"## Class: `{class_name}`\n\n{docstring}\n")
     
     return doc_data
 
@@ -54,3 +58,4 @@ def run():
 
 if __name__ == "__main__":
     run()
+
