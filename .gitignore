@@ -24,3 +24,6 @@ build/
 
 # MacOS system files
 .DS_Store
+
+# Ignore generated documentation
+docs/
