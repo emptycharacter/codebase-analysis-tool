@@ -8,9 +8,9 @@ def check_code_security():
     print("✅ Code security scan complete.")
 
 def check_dependency_vulnerabilities():
-    """Checks installed Python dependencies for known security issues."""
-    print("🔍 Checking dependencies for vulnerabilities...")
-    subprocess.run(["safety", "check", "--full-report"])
+    """Checks installed Python dependencies for known security issues using the updated 'safety scan' command."""
+    print("🔍 Checking dependencies for vulnerabilities using 'safety scan'...")
+    subprocess.run(["safety", "scan"])
     print("✅ Dependency security check complete.")
 
 def run():
